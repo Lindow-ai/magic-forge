@@ -45,7 +45,7 @@ const components: { title: string, description: string }[] = [
 const NavigationBarLanding = () => {
     return (
         <NavigationMenu>
-            <NavigationMenuList>
+            <NavigationMenuList className="hidden md:flex md:space-x-4">
                 <NavigationMenuItem>
                     <NavigationMenuTrigger>Getting started</NavigationMenuTrigger>
                     <NavigationMenuContent>
@@ -79,7 +79,7 @@ const NavigationBarLanding = () => {
                     </NavigationMenuContent>
                 </NavigationMenuItem>
                 <NavigationMenuItem>
-                    <NavigationMenuTrigger>Components</NavigationMenuTrigger>
+                    <NavigationMenuTrigger>Templates</NavigationMenuTrigger>
                     <NavigationMenuContent>
                         <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
                             {components.map((component) => (
@@ -95,8 +95,15 @@ const NavigationBarLanding = () => {
                 </NavigationMenuItem>
                 <NavigationMenuItem>
                     <Link href="/docs" legacyBehavior passHref>
-                        <NavigationMenuLink>
+                        <NavigationMenuLink className="font-meduim">
                             Documentation
+                        </NavigationMenuLink>
+                    </Link>
+                </NavigationMenuItem>
+                <NavigationMenuItem>
+                    <Link href="/" legacyBehavior passHref>
+                        <NavigationMenuLink className="font-meduim">
+                            Pricing
                         </NavigationMenuLink>
                     </Link>
                 </NavigationMenuItem>
