@@ -2,6 +2,8 @@
 
 import React from "react"
 import Image from "next/image"
+import { useRouter } from "next/navigation"
+import { SignInButton, SignedIn, SignedOut } from "@clerk/nextjs"
 
 const features = [
     {
@@ -43,6 +45,9 @@ const features = [
 ]
 
 const SecondSection = () => {
+
+    const router = useRouter()
+
     return (
         <div>
             <div className="md:flex-row flex-col items-center flex justify-center pb-10">
@@ -50,9 +55,23 @@ const SecondSection = () => {
                     <div className="bg-gradient-to-r from-blue-800 to-green-300 bg-clip-text text-transparent text-4xl md:text-6xl font-bold pb-10">
                         From Individual, startup to entreprise, Magic Forge is built for every type of business.
                     </div>
-                    <button className="bg-blue-500 text-white p-4 justify-center flex md:w-1/3 rounded-lg hover:bg-blue-600">
-                        Get Started
-                    </button>
+                    <SignedIn>
+                        <button
+                            className="bg-blue-500 text-white p-4 justify-center flex md:w-1/3 rounded-lg hover:bg-blue-600"
+                            onClick={() => router.push('/dashboard')}
+                        >
+                            Get Started
+                        </button>
+                    </SignedIn>
+                    <SignedOut>
+                        <SignInButton mode="modal">
+                            <button
+                                className="bg-blue-500 text-white p-4 justify-center flex md:w-1/3 rounded-lg hover:bg-blue-600"
+                            >
+                                Get Started
+                            </button>
+                        </SignInButton>
+                    </SignedOut>
                 </div>
                 <video className="rounded-xl md:w-2/5 p-4 md:p-0" autoPlay loop muted>
                     <source src="/content/hero-2.mp4" type="video/mp4" />
@@ -66,9 +85,9 @@ const SecondSection = () => {
                     {
                         features.map((feature, index) => (
                             <div
-                             className="flex-col space-y-6 pb-10 border p-8 rounded-xl items-center justify-center w-full hover:scale-105 transform transition-all duration-500 ease-in-out"
-                             key={index}
-                             >
+                                className="flex-col space-y-6 pb-10 border p-8 rounded-xl items-center justify-center w-full hover:scale-105 transform transition-all duration-500 ease-in-out"
+                                key={index}
+                            >
                                 <div className="text-gray-600 text-3xl font-bold">
                                     <Image
                                         src={feature.image}

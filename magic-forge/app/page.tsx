@@ -8,7 +8,7 @@ import Pricing from './components/Pricing'
 import FifthSection from './components/FifthSection'
 import Footer from './components/Footer'
 
-export default function Home() {
+const  Home = () => {
   return (
     <div>
       <NavBarLanding />
@@ -25,3 +25,5 @@ export default function Home() {
     </div>
   )
 }
+
+export default Home
