@@ -1,5 +1,6 @@
 'use client'
 
+import ThemeSwitcher from "@/components/ThemeSwitcher/ThemeSwitcher"
 import { Button } from "@/components/ui/button"
 import {
     Sheet,
