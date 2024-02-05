@@ -1,7 +1,10 @@
 import type { Metadata } from 'next'
-import { Outfit } from 'next/font/google'
+import { Jost } from 'next/font/google'
 
-const font = Outfit({ subsets: ['latin'] })
+const jost = Jost({
+	subsets: ["latin"],
+	weight: ["100", "300", "400", "500", "700", "900"],
+});
 
 export const metadata: Metadata = {
     title: 'Magic Forge - Dashboard',
@@ -15,7 +18,7 @@ export default function RootLayout({
 }) {
     return (
         <html lang="en">
-            <body className={font.className}>{children}</body>
+            <body className={`${jost.className} antialiased dark:bg-[rgb(9,9,11)]`}>{children}</body>
         </html>
     )
 }
