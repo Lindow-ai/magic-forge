@@ -4,6 +4,7 @@ import React, { useState, useEffect } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import Image from "next/image"
 
+
 const images = [
     {
         url: "/images/logo/logo-2.svg",

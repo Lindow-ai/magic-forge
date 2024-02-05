@@ -7,14 +7,14 @@ const jost = Jost({
 });
 
 export const metadata: Metadata = {
-    title: 'Magic Forge - Dashboard',
-    description: 'Dashboard for create your component',
-}
+  title: "Magic Forge - Dashboard",
+  description: "Dashboard for create your component",
+};
 
 export default function RootLayout({
-    children,
+  children,
 }: {
-    children: React.ReactNode
+  children: React.ReactNode;
 }) {
     return (
         <html lang="en">
